@@ -49,14 +49,13 @@ const styles = StyleSheet.create({
     },
     textPhone: {
         fontSize: 12,
-
     },
     searchIconContainer: {
         alignItems: 'center',
         justifyContent: 'center',
     },
     searchIcon: {
-        backgroundColor: '#b3afaf',
+        backgroundColor: 'lightgray',
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',

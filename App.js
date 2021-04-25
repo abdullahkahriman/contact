@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import RecentView from './src/views/RecentView';
 import ContactView from './src/views/ContactView';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 const Stack = createStackNavigator();
 
