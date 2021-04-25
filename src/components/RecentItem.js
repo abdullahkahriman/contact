@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { ImageBackground } from 'react-native';
 import { StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native';
 import { Icon } from 'react-native-elements'
 
@@ -10,7 +9,7 @@ function RecentItem({ item }) {
                 <Image source={{ uri: item.imageUrl }}
                     style={styles.image} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.textContainer}>
+            <TouchableOpacity onPress={() => alert(`Call ${item.name}`)} style={styles.textContainer}>
                 <Text style={styles.textName}>{item.name}</Text>
                 <Text style={styles.textPhone}>{item.phone} {item.date} {item.callType}: {item.time}</Text>
             </TouchableOpacity>

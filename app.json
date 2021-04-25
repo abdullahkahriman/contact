@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "React native contact app",
+    "githubUrl": "https://github.com/abdullahkahriman/contact"
   }
 }

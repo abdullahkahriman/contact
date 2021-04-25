@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 import { Icon } from 'react-native-elements'
 
-function SearchInput() {
+function SearchInput({ contactLength }) {
     return (
         <View style={styles.container}>
             <View style={styles.textInputContainer}>
@@ -12,7 +12,7 @@ function SearchInput() {
                     color="#424242"
                     style={styles.searchIcon}
                 />
-                <TextInput style={styles.textInput} placeholder="184 contacts" />
+                <TextInput style={styles.textInput} placeholder={`${contactLength} contacts`} />
             </View>
         </View>
     );
@@ -20,7 +20,6 @@ function SearchInput() {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 20,
         alignItems: 'center',
         justifyContent: 'center'
     },

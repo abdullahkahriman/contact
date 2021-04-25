@@ -7,15 +7,17 @@ import RecentItem from '../components/RecentItem'
 // data
 import RecentData from '../../assets/data/RecentData'
 import { ScrollView } from 'react-native';
+import ContactData from '../../assets/data/ContactData';
 
 function RecentView({ navigation }) {
+    const [contactDataLength] = React.useState(ContactData.length);
     const [recentDataList, setRecentDataList] = React.useState(RecentData);
 
     return (
         <View style={styles.container}>
             <Menu nav={navigation} activeId={1} />
-            <SearchInput />
             <ScrollView>
+                <SearchInput contactLength={contactDataLength} />
                 {recentDataList.map((item, index) => <RecentItem key={index} item={item} />)}
             </ScrollView>
         </View>

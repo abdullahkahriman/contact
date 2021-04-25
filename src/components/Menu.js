@@ -2,9 +2,6 @@ import * as React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 function Menu({ nav, activeId }) {
-
-    console.log(activeId)
-
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => nav.navigate('Recent')} style={{ marginRight: 30 }}>
@@ -21,6 +18,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         marginTop: 40,
+        paddingBottom: 15,
         alignItems: 'center',
         justifyContent: 'center'
     },
