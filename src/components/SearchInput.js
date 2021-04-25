@@ -21,7 +21,8 @@ function SearchInput({ contactLength }) {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginBottom: 20
     },
     textInputContainer: {
         width: '90%',

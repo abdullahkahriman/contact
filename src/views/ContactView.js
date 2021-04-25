@@ -36,10 +36,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        paddingBottom: 20,
     },
     iconContainer: {
-        alignItems: 'flex-end',
         position: 'absolute',
         right: 20,
         bottom: 15
