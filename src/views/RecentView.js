@@ -15,23 +15,14 @@ const width = Dimensions.get("window").width,
     height = Dimensions.get("window").height;
 
 function RecentView({ navigation, route }) {
-    console.log(route)
     const [contactDataLength] = React.useState(ContactData.length);
     const [recentDataList, setRecentDataList] = React.useState(RecentData);
     const [iconName, setIconName] = React.useState('chevron-up');
 
-    const toggSetIconName = () => {
+    const openNumericPanel = () => {
         navigation.setParams({
-            isNumericPanelOpen: !route.params.isNumericPanelOpen
+            isNumericPanelOpen: true
         });
-
-        if (iconName === 'chevron-up') {
-            setIconName('chevron-down');
-
-        } else {
-            setIconName('chevron-up');
-
-        }
     }
 
     const numericData = [
@@ -49,7 +40,7 @@ function RecentView({ navigation, route }) {
         { id: 12, text: '#', char: '' },
         { id: 13, text: null, char: 'menu' },
         { id: 14, text: null, char: 'phone' },
-        { id: 15, text: null, char: 'chevron-up' },
+        { id: 15, text: null, char: 'chevron-down' },
     ];
 
     const Item = ({ num }) => (
@@ -69,9 +60,9 @@ function RecentView({ navigation, route }) {
                 <SearchInput contactLength={contactDataLength} />
                 {recentDataList.map((item, index) => <RecentItem key={index} item={item} />)}
             </ScrollView>
-            <TouchableOpacity onPress={() => toggSetIconName()} style={styles.iconContainer}>
+            <TouchableOpacity onPress={() => openNumericPanel()} style={styles.iconContainer}>
                 <Icon
-                    name={iconName}
+                    name="chevron-up"
                     type='evilicon'
                     color="#fff"
                     size={50}
