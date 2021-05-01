@@ -8,7 +8,6 @@ import ContactItem from '../components/ContactItem';
 import ContactData from '../../assets/data/ContactData';
 import { Icon } from 'react-native-elements'
 
-
 function ContactView({ navigation }) {
     const [contactDataList, setContactDataList] = React.useState(ContactData);
 
@@ -16,10 +15,10 @@ function ContactView({ navigation }) {
         <View style={styles.container}>
             <Menu nav={navigation} activeId={2} />
             <ScrollView>
-                <SearchInput contactLength={contactDataList.length} />
+                <SearchInput contactLength={contactDataList.length} nav={navigation} />
                 {contactDataList.map((item, index) => <ContactItem key={index} item={item} />)}
             </ScrollView>
-            <TouchableOpacity onPress={() => alert('New Contact')} style={styles.iconContainer}>
+            <TouchableOpacity onPress={() => navigation.push('NewContact')} style={styles.iconContainer}>
                 <Icon
                     name="plus"
                     type='evilicon'

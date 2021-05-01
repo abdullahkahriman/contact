@@ -57,7 +57,7 @@ function RecentView({ navigation, route }) {
         <View style={styles.container}>
             <Menu nav={navigation} activeId={1} />
             <ScrollView>
-                <SearchInput contactLength={contactDataLength} />
+                <SearchInput contactLength={contactDataLength} nav={navigation} />
                 {recentDataList.map((item, index) => <RecentItem key={index} item={item} />)}
             </ScrollView>
             <TouchableOpacity onPress={() => openNumericPanel()} style={styles.iconContainer}>

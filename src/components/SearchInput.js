@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { Icon } from 'react-native-elements'
 
-function SearchInput({ contactLength }) {
+function SearchInput({ contactLength, nav }) {
     const [val, setVal] = React.useState(null);
 
     const search = (text) => {
@@ -20,7 +20,9 @@ function SearchInput({ contactLength }) {
                     color="#424242"
                     style={styles.searchIcon}
                 />
-                <TextInput value={val} onChangeText={(text) => { search(text); }} style={styles.textInput} placeholder={`${contactLength} contacts`} />
+                <TextInput onFocus={() => nav.setParams({
+                    isNumericPanelOpen: false
+                })} value={val} onChangeText={(text) => { search(text); }} style={styles.textInput} placeholder={`${contactLength} contacts`} />
             </View>
         </View>
     );
