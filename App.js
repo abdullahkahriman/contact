@@ -13,7 +13,7 @@ function App() {
   return (
     <NavigationContainer style={{ backgroundColor: '#fff', }}>
       <Stack.Navigator headerMode={false}>
-        <Stack.Screen name="Recent" component={RecentView} />
+        <Stack.Screen name="Recent" initialParams={{ isNumericPanelOpen: true }} component={RecentView} />
         <Stack.Screen name="Contact" component={ContactView} />
       </Stack.Navigator>
     </NavigationContainer>

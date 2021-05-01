@@ -3,6 +3,14 @@ import { StyleSheet, TextInput, View } from 'react-native';
 import { Icon } from 'react-native-elements'
 
 function SearchInput({ contactLength }) {
+    const [val, setVal] = React.useState(null);
+
+    const search = (text) => {
+        if (text) {
+        }
+        // .filter(d => d.name.toLocaleLowerCase().includes('us'))
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.textInputContainer}>
@@ -12,7 +20,7 @@ function SearchInput({ contactLength }) {
                     color="#424242"
                     style={styles.searchIcon}
                 />
-                <TextInput style={styles.textInput} placeholder={`${contactLength} contacts`} />
+                <TextInput value={val} onChangeText={(text) => { search(text); }} style={styles.textInput} placeholder={`${contactLength} contacts`} />
             </View>
         </View>
     );
